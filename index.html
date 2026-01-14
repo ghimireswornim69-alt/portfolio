@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swornim Ghimire | Portfolio</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hobbies {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .hobby-pill {
+            background: rgba(99, 102, 241, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .contact-btn:hover {
+            background: var(--secondary);
+            transform: scale(1.02);
+        }
+
+        #phone-display {
+            margin-top: 15px;
+            font-family: monospace;
+            color: #22c55e;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-card">
+        <div class="profile-img">SG</div>
+        <h1>Swornim Ghimire</h1>
+        <p class="tagline">2024 Graduate | Explorer | Enthusiast</p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <span>Age</span>
+                <strong>25 Years Old</strong>
+            </div>
+            <div class="info-item">
+                <span>Education</span>
+                <strong>Bachelor's Degree (Class of 2024)</strong>
+            </div>
+            <div class="info-item">
+                <span>Interests</span>
+                <div class="hobbies">
+                    <div class="hobby-pill">🎤 Singing</div>
+                    <div class="hobby-pill">✈️ Travelling</div>
+                    <div class="hobby-pill">🏍️ Riding</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="contact-btn" onclick="toggleContact()">Get In Touch</button>
+        <div id="phone-display">📞 +9804119817212</div>
+    </div>
+
+    <script>
+        function toggleContact() {
+            const display = document.getElementById('phone-display');
+            if (display.style.display === 'block') {
+                display.style.display = 'none';
+            } else {
+                display.style.display = 'block';
+                // Small animation effect
+                display.style.animation = 'fadeIn 0.5s ease';
+            }
+        }
+    </script>
+</body>
+</html>
